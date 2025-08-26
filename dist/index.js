@@ -9,3 +9,4 @@ export { pwaIOSBanner } from './pwaIOSBanner.svelte';
 export { SvelteKitTopLoader } from './SvelteKitTopLoader.svelte';
 export { updateHandler } from './updateHandler.svelte';
 export { userMenu } from './userMenu.svelte';
+export { dark } from './theme-store.js';

@@ -3,7 +3,7 @@
   import { onDestroy } from 'svelte';
   import ThemeHandler from './darkThemeHandler.svelte';
   import LeftMenu from './leftMenu.svelte';
-  import LeftMenuHamburguer from './leftMenuHamburguer.svelte';
+  import LeftMenuHamburger from './leftMenuHamburger.svelte';
   import UserMenu from './userMenu.svelte';
   import { NotificationsMenu } from 'svelte-firebase';
   import { navigating } from '$app/state';
@@ -39,7 +39,7 @@
   <div class="flex flex-col flex-1 min-w-0">
     <header class="z-10 py-4 bg-white shadow-md dark:bg-gray-800">
       <div class="flex items-center justify-between px-6 mx-auto text-app-600 dark:text-app-300">
-        <LeftMenuHamburguer />
+        <LeftMenuHamburger />
         <!-- MiddleHeadText -->
         <div class="flex justify-center flex-1 lg:mr-32">
           {@render CenterElement()}

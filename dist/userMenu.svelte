@@ -23,7 +23,7 @@
 			<i class="text-3xl icon-[mdi--account-circle] text-gray-400 dark:text-gray-300"></i>
 		{:then linkToStorageFile}
 	  		<img class="object-cover w-8 h-8 rounded-full userImage" src="{linkToStorageFile.url.toString()}" alt="Perfil"/>
-		{:else}
+		{:catch error}
 			<i class="text-3xl icon-[mdi--account-circle] text-gray-400 dark:text-gray-300"></i>
 		{/if}
 	</button>
@@ -48,4 +48,5 @@
 	{/if}
 
 </div>
+
 

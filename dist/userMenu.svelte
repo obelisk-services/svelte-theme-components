@@ -13,7 +13,7 @@
 	 */
 
 	/** @type {Props} */
-	let { user={}, userPoolId=', backendPath='/backend/', dest = 'usuario', AditionalMenuLinks=null } = $props();
+	let { user={}, userPoolId='', backendPath='/backend/', dest='usuario', AditionalMenuLinks=null } = $props();
 
 </script>
 
@@ -48,3 +48,4 @@
 	{/if}
 
 </div>
+

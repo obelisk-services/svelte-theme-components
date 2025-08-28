@@ -25,7 +25,7 @@
 	  		<img class="object-cover w-8 h-8 rounded-full userImage" src="{linkToStorageFile.url.toString()}" alt="Perfil"/>
 		{:catch error}
 			<i class="text-3xl icon-[mdi--account-circle] text-gray-400 dark:text-gray-300"></i>
-		{/if}
+		{/await}
 	</button>
 	{#if showUserMenu}
 	  <ul transition:fade use:clickOutside onoutclick={() => (showUserMenu = false)} class="absolute right-0 w-56 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:border-gray-700 dark:text-gray-300 dark:bg-gray-700">
@@ -48,5 +48,6 @@
 	{/if}
 
 </div>
+
 
 

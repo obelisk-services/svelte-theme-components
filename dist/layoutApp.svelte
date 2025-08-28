@@ -14,7 +14,7 @@
   import { dark } from './theme-store.js';
   
   
-  let { data, children, CenterElement, user, notifications=false, AditionalMenuLinks=null, firebaseConfig={} } = $props();
+  let { data, children, CenterElement, user, userPoolId='', notifications=false, AditionalMenuLinks=null, firebaseConfig={} } = $props();
 
   let darkMode = $state(false);
 	//Para tema oscuro
@@ -58,7 +58,7 @@
             </li>
           {/if}
           <li>
-            <UserMenu dest={page.url.pathname.split('/')[1]} backendPath={data.backendPath} {user} {AditionalMenuLinks}/>
+            <UserMenu dest={page.url.pathname.split('/')[1]} {userPoolId} backendPath={data.backendPath} {user} {AditionalMenuLinks}/>
           </li>
         </ul>
       </div>

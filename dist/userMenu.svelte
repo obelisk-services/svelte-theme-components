@@ -1,6 +1,7 @@
 <script>
 	import { clickOutside } from "svelte-js-functions-package";
 	import { fade } from 'svelte/transition';
+	import { getUrl } from "aws-amplify/storage";
 	let showUserMenu=$state(false);
 
 	/**
@@ -12,14 +13,16 @@
 	 */
 
 	/** @type {Props} */
-	let { user={}, backendPath='/backend/', dest = 'usuario', AditionalMenuLinks=null } = $props();
+	let { user={}, userPoolId=', backendPath='/backend/', dest = 'usuario', AditionalMenuLinks=null } = $props();
 
 </script>
 
 <div class="relative">
 	<button type="button" aria-label="Menú de usuario" onclick={() => (showUserMenu = !showUserMenu)} class="flex align-middle rounded-full focus:shadow-outline-red focus:outline-none">
-		{#if user.userImage && user.userImage!='/images/default.png'}
-	  		<img class="object-cover w-8 h-8 rounded-full userImage" src="{backendPath+user.userImage}" alt="Perfil"/>
+		{#await getUrl({path: userPoolId+'/'+user.username.username, options: {validateObjectExistence:true}})}
+			<i class="text-3xl icon-[mdi--account-circle] text-gray-400 dark:text-gray-300"></i>
+		{:then linkToStorageFile}
+	  		<img class="object-cover w-8 h-8 rounded-full userImage" src="{linkToStorageFile.url.toString()}" alt="Perfil"/>
 		{:else}
 			<i class="text-3xl icon-[mdi--account-circle] text-gray-400 dark:text-gray-300"></i>
 		{/if}
@@ -43,4 +46,5 @@
 		</li>
 	  </ul>
 	{/if}
+
 </div>

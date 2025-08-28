@@ -42,7 +42,7 @@
 <svelte:window bind:outerWidth />
 
 <!-- Mobile hamburger -->
-<aside id="menuSidebar" use:clickOutside onoutclick={() => (showLeftMenu.set(false))} class="fixed md:static md:block inset-y-0 z-20 flex-shrink-0 {showMobileMenu?'w-50':'w-0'} {onlyIcons?'md:w-12':'md:w-50'} mt-16 md:mt-0 overflow-y-auto bg-white dark:bg-gray-800 transition-all ease-in-out" data-sveltekit-preload-data="tap">
+<aside id="menuSidebar" use:clickOutside onoutclick={() => (showLeftMenu.set(false))} class="fixed md:static md:block inset-y-0 z-20 flex-shrink-0 {showMobileMenu?'w-48':'w-0'} {onlyIcons?'md:w-12':'md:w-48'} mt-16 md:mt-0 overflow-y-auto bg-white dark:bg-gray-800 transition-all ease-in-out" data-sveltekit-preload-data="tap">
     <div class="py-4 text-gray-500 dark:text-gray-400">
       	<div class="flex justify-center">
 			<img alt={appName} src="/images/logo.webp" class="block dark:hidden {onlyIcons?'mx-2 max-w-8':'mx-6 max-w-12'} text-lg font-bold text-gray-800 dark:text-gray-200">
@@ -69,4 +69,5 @@
       	{/each}
       </ul>
     </div>
+
 </aside>

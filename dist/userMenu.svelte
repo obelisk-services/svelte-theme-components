@@ -19,7 +19,7 @@
 
 <div class="relative">
 	<button type="button" aria-label="Menú de usuario" onclick={() => (showUserMenu = !showUserMenu)} class="flex align-middle rounded-full focus:shadow-outline-red focus:outline-none">
-		{#await getUrl({path: userPoolId+'/'+user.username.username, options: {validateObjectExistence:true}})}
+		{#await getUrl({path: user.identityId, options: {validateObjectExistence:true}})}
 			<i class="text-3xl icon-[mdi--account-circle] text-gray-400 dark:text-gray-300"></i>
 		{:then linkToStorageFile}
 	  		<img class="object-cover w-8 h-8 rounded-full userImage" src="{linkToStorageFile.url.toString()}" alt="Perfil"/>
@@ -48,6 +48,7 @@
 	{/if}
 
 </div>
+
 
 
 

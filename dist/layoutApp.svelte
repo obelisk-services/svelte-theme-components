@@ -45,7 +45,7 @@
           {@render CenterElement()}
         </div>
         <ul class="flex items-center flex-shrink-0 space-x-4">
-          {@render RightElement()}
+          {@render RightElement?.()}
           <li>
             <UpdateHandler />
           </li>

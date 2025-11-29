@@ -14,7 +14,7 @@
   import { dark } from './theme-store.js';
   
   
-  let { data, children, CenterElement, user, userPoolId='', notifications=false, AditionalMenuLinks=null, firebaseConfig={} } = $props();
+  let { data, children, CenterElement, RightElement, user, userPoolId='', notifications=false, AditionalMenuLinks=null, firebaseConfig={} } = $props();
 
   let darkMode = $state(false);
 	//Para tema oscuro
@@ -45,6 +45,7 @@
           {@render CenterElement()}
         </div>
         <ul class="flex items-center flex-shrink-0 space-x-4">
+          {@render RightElement()}
           <li>
             <UpdateHandler />
           </li>

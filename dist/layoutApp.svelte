@@ -42,7 +42,7 @@
         <LeftMenuHamburger />
         <!-- MiddleHeadText -->
         <div class="flex justify-center flex-1 lg:mr-32">
-          {@render CenterElement()}
+          {@render CenterElement?.()}
         </div>
         <ul class="flex items-center flex-shrink-0 space-x-4">
           {@render RightElement?.()}
